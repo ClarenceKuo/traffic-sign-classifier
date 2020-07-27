@@ -1,0 +1,10 @@
+.DS_Store
+data
+.ipynb_checkpoints
+*.h5
+models
+*.swp
+*.p
+CODEOWNERS
+README_temp.md
+temp_files/
