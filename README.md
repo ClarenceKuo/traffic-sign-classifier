@@ -40,12 +40,12 @@ From the plots, we can see that the distributions are similar in all data sets, 
 
 All the pixels of training images are coverted to floating number range from 0~1.
 $$
-\frac{X - X_{min}}{X_{max} - X_{min}}
+![eq1](https://bit.ly/39C7S4c)
 $$
 
 This step will recenter the mean and deviation of the data to almost 0.
 
-The $X_{min}$ and $X_{max}$ from training set data are used on both validation and test set for preprocess consistency.
+The X_min and X_max from training set data are used on both validation and test set for preprocess consistency.
 
 The preprocessed image looks identical to the original image but if we print out the max and min of the image, we can see that it is converted successfully.
 
