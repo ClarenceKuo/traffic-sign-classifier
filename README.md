@@ -1,7 +1,7 @@
-# Geran Traffic Sign Classifier
+# German Traffic Sign Classifier
 
 
-**The goal of this project is to train a CNN network that identifies German traffic signs.**
+**The goal of this project is to train a CNN that identifies German traffic signs.**
 
 ## Summary
 Architecture: LeNet-5 with modified setting
@@ -16,7 +16,7 @@ Accuracy:
 
 ## Data Set Summary & Exploration
 
-#### Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
+### Provide a basic summary of the data set
 
 I used the numpy and matplotlib libraries to calculate and visualize the summary statistics of the traffic signs data set.
 
