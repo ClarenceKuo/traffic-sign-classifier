@@ -38,10 +38,10 @@ From the plots, we can see that the distributions are similar in all data sets, 
 
 ### Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques?
 
-All the pixels of training images are coverted to floating number range from 0~1.
-$$
+All the pixels of training images are coverted to floating number range from 0~1 using the following equation.
+
 ![eq1](https://bit.ly/39C7S4c)
-$$
+
 
 This step will recenter the mean and deviation of the data to almost 0.
 
