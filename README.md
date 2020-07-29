@@ -98,7 +98,7 @@ I tried using a dropout layer just in case that I found the model overfitting, b
 Next, I scaled down the deviation during varaible initalization to 0.05,this boost my accuracy to 99% training and 94% validating. 
 Accrding to [this Stackoverflow post](https://stackoverflow.com/questions/42006089/reason-why-setting-tensorflows-variable-with-small-stddev). The reason behind this is that the small weights can be more easily effected by SGD during backprop.
 
-After reading about the [Dying RELU](https://medium.com/@danqing/a-practical-guide-to-relu-b83ca804f1f7), I put 0.05 to the bias term to avoid creating too many dead RELU cell. I didn't really observed the benefits from this approach but it seems convincing from the article. 
+After reading about the [Dying RELU](https://medium.com/@danqing/a-practical-guide-to-relu-b83ca804f1f7), I put 0.05 to the bias term to avoid creating too many dead RELU cell. I didn't really observe the benefit from this approach but it seems convincing from the article. 
 
 ## Test a Model on New Images
 
