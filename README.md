@@ -1,7 +1,7 @@
 # German Traffic Sign Classifier
 
 
-**The goal of this project is to train a CNN that identifies German traffic signs.**
+**The goal of this project is to train a CNN model that identifies German traffic signs.**
 
 ## Summary
 Architecture: LeNet-5 with modified setting
@@ -38,9 +38,9 @@ From the plots, we can see that the distributions are similar in all data sets, 
 
 ### Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques?
 
-All the pixels of training images are coverted to floating number range from 0~1 using the following equation.
+All the pixels of training images are coverted to floating number range from 0~1 using:
 
-![eq1](https://bit.ly/39C7S4c)
+pixcel = pixcel/ 255
 
 
 This step will recenter the mean and deviation of the data to almost 0.
@@ -106,17 +106,14 @@ After reading about the [Dying RELU](https://medium.com/@danqing/a-practical-gui
 
 Here are five German traffic signs that I found on the web:
 
-![](https://i.imgur.com/CuW4beU.png)
+![](https://i.imgur.com/7p1bejd.png)
+![](https://i.imgur.com/lm7CfBf.jpg)
+![](https://i.imgur.com/eUCTLz5.jpg)
+![](https://i.imgur.com/LL9HnRF.jpg)
+![](https://i.imgur.com/pV6QuER.jpg)
 
-![](https://i.imgur.com/uJv343V.jpg)
 
-![](https://i.imgur.com/d9JdOMU.jpg)
-
-![](https://i.imgur.com/mtfkMnK.jpg)
-
-![](https://i.imgur.com/NVTMXwi.jpg)
-
-The last one contained watermarks and could be hard to classify.
+The last one contained watermarks and could be harder to classify.
 
 ### Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set.
 
