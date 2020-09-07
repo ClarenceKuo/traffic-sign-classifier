@@ -13,12 +13,9 @@ Accuracy:
 - Validation: 94.2%
 - Test: 92%
 
+### Basic summary of the data set
 
-## Data Set Summary & Exploration
-
-### Provide a basic summary of the data set
-
-I used the numpy and matplotlib libraries to calculate and visualize the summary statistics of the traffic signs data set.
+Using the numpy and matplotlib libraries, I calculated and visualized the summary statistics of the traffic signs data set.
 
 * The size of training set is 34799
 * The size of the validation set is 4410
@@ -26,9 +23,7 @@ I used the numpy and matplotlib libraries to calculate and visualize the summary
 * The shape of a traffic sign image is (32,32,3)
 * The number of unique classes in the data set is 43
 
-### Include an exploratory visualization of the dataset.
-
-Here is an exploratory visualization of the distribution of the data set. It is a histogam chart showing how the data is spread accross different categories.
+Here is an exploratory visualization of the distribution of the data set: A histogam chart showing how the data is spread accross different categories.
 ![](https://i.imgur.com/j7kyCHw.png)
 
 From the plots, we can see that the distributions are similar in all data sets, so the training is fairly balanced.
@@ -82,23 +77,21 @@ I used following configure and hyperparameters in my final model:
 - loss operation: cross entropy
 - optimiser: Adam optimiser
 
-### Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93.
+### The approach
 
-My final model results were:
+Final model results:
 * training set accuracy of 0.99
 * validation set accuracy of 0.942
 * test set accuracy of 0.92
 
-From previous experience, I started with LeNet-5, whcih is a simple but powerful structure that is famous for image classification problems. 
+I started with LeNet-5, whcih is a simple but powerful structure that is famous for image classification problems. 
 
-After a few tries, I found that for a 43 classes case, the original amount of parameters is not big enough for the model to learn accurately. This can be seen form the phenomenon that the training accuracy is limited to around 90%. Afterward, I add another layer and more kernel to the model. This approach solved the training accuracy ceiling issue, resulting in a 97% training accuracy and 90% validation accuracy.
-
-I tried using a dropout layer just in case that I found the model overfitting, but it was not necessary for my case and it end up setting keep_prob to 1(no drop out).
+After a few tries, I found that for a 43 classes case, the original amount of parameters is not big enough for the model to learn accurately. This can be seen form the phenomenon that the training accuracy is limited to around 90%. Afterward, I add another layer and more kernel to the model. This approach solved the training accuracy ceiling issue, resulting in a 97% training accuracy and 90% validation accuracy.I added an additional dropout layer in case that the model experienced overfitting, but it was not necessary for my case and I end up setting keep_prob to 1(no drop out).
 
 Next, I scaled down the deviation during varaible initalization to 0.05,this boost my accuracy to 99% training and 94% validating. 
 Accrding to [this Stackoverflow post](https://stackoverflow.com/questions/42006089/reason-why-setting-tensorflows-variable-with-small-stddev). The reason behind this is that the small weights can be more easily effected by SGD during backprop.
 
-After reading about the [Dying RELU](https://medium.com/@danqing/a-practical-guide-to-relu-b83ca804f1f7), I put 0.05 to the bias term to avoid creating too many dead RELU cell. I didn't really observe the benefit from this approach but it seems convincing from the article. 
+After reading about the [Dying RELU](https://medium.com/@danqing/a-practical-guide-to-relu-b83ca804f1f7), I put 0.05 to the bias term to avoid creating too many dead RELU cell. I didn't really observe the benefit from this approach but might be helpful with bigger model. 
 
 ## Test a Model on New Images
 
@@ -112,40 +105,7 @@ Here are five German traffic signs that I found on the web:
 ![](https://i.imgur.com/LL9HnRF.jpg)
 ![](https://i.imgur.com/pV6QuER.jpg)
 
-
-The last one contained watermarks and could be harder to classify.
-
-### Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set.
-
-The model predict these 5 image well, with 100% accuracy.
-I guess the image I found on the internet is a little too easy for my model. However, since the test accuracy also hit 92%, averagely speaking, the 5 out of 5 correct prediction is also possible.
-
-### Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction.
-
-The top worth mentioning probabilities are listed below:
-
-**Image 1:Roundabout**
-- 100% Roundabout
-- 2.5 * e-23 Speed Limit 120km/h
-
-**Image 2:Speed Limit 60 km/h**
-- 100% Speed Limit 60 km/h
-- 1.4 * e-10 Speed Limit 50 km/h
-
-**Image 3:Traffic Signal**
-- 100% Traffic Signal
-- 6.7 * e-15 General Caution
-
-**Image 4:Road Work**
-- 83.3% Road Work
-- 15.6% Road Narrow On The Right
-- 0.9%  Bicycle Crossing
-
-**Image 5:Wild Animal Crossing**
-- 99.99% Wild Animal Crossing
-- 2.1 * e-4 Slippery Road
- 
-Note: Some probabilities that are too small to mention are neglected. The original number are listed in the end of the  jupyter notebook - [Traffic_Sign_Classifier.ipynb](https://github.com/ClarenceKuo/traffic-sign-classifier/blob/master/Traffic_Sign_Classifier.ipynb).
+This model predict these 5 image well, with 100% accuracy.
 
 **Thanks for reading this!**
 
